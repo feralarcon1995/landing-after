@@ -1,0 +1,118 @@
+main {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas: "left left right right";
+    padding: 20px;
+
+    .hero__left {
+        grid-area: left;
+        @include flex(column,center,flex-start);
+        width: 90%;
+        gap: 50px;
+        & h1 {
+            font-size: 40px;
+            color: $secondColor;
+        }
+
+        & p {
+            font-size: 30px;
+            color: $secondColor;
+        }
+
+        & a {
+            @extend .border;
+            min-width: 170px;
+            max-width: 50%;
+            text-align: center;
+            color: $thirdColor;
+            font-size: 20px;
+            font-weight: bold;
+            transition: 0.3s;
+
+            &:hover {
+                background-color: $mainColor;
+                border: 2px solid $thirdColor;
+                color: $thirdColor;
+            }
+        }
+
+        &__users {
+            height: 120px;
+            @include flex(row,center,center);
+            & img {
+                width: 70px;
+                height: 70px;
+                object-fit: cover;
+                border-radius: 100%;
+                border: 2px solid $secondColor;
+                margin: -10px;
+                transition: .3s;
+                &:hover{
+                    margin: 0;
+                    width: 100px;
+                    height: 100px;
+                    z-index: 1;
+                }
+            }
+        }
+    }
+
+    /* hero right */
+    .hero__right {
+        grid-area: right;
+        position: relative;
+
+        & img {
+            width: 90%;
+            min-height: 700px;
+            max-height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+            
+        }
+
+        &__title {
+            padding: 25px;
+            background-color: $secondColor;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: 0.3s;
+            &:hover {
+                background-color: $secondColor;
+                padding: 30px;
+                font-size: 20px;
+            }
+
+            .bluebar {
+                display: inline-block;
+                background-color: $thirdColor;
+                width: 30%;
+                height: 13px;
+                border-radius: 50px;
+            }
+
+            .graybar {
+                display: inline-block;
+                background-color: #707070;
+                width: 70%;
+                height: 13px;
+                border-radius: 50px;
+            }
+        }
+
+        .c1 {
+            position: absolute;
+            bottom: 30%;
+            left: -20%;
+        }
+
+        .c2 {
+            position: absolute;
+            bottom: 5%;
+            left: -10%;
+        }
+    }
+}
+
+/* hero left */

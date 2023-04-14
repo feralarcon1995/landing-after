@@ -1,0 +1,32 @@
+nav {
+    @include flex(row,space-between,center);
+    padding: 40px 20px;
+    .nav-list {
+        display: flex;
+        gap: 40px;
+
+        li:last-child a {
+            color: $thirdColor;
+            @extend .border;
+            transition: .3s;
+            &:hover {
+                background-color: $mainColor;
+                border: 2px solid $thirdColor;
+                color: $thirdColor;
+            }
+        }
+    }
+
+    .nav-brand, .nav-link {
+        font-size: 24px;
+        color: $secondColor;
+        font-weight: 600;
+        transition: .3s;
+
+        &:hover, &:hover{
+            color: $thirdColor;
+        }
+    }
+    
+}
+
